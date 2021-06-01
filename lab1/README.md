@@ -77,3 +77,5 @@
 
 1. Build a python web app and learn about configuration management using environment variables, see [Lab Instructions](./python/README.md)
 
+1. Build an SFTP server app and learn about using volumes for configuration and data persistence. see [Lab Instructions](./sftp-server/README.md)
+
