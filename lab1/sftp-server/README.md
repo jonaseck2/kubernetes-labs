@@ -92,6 +92,7 @@ The purpose of this lab is to show how configuration can be injected into the co
 
 1. Start the container. Port 2222 is used by the other server so let's change the mapping:
 
+    ```sh
     sudo docker run -d \
     -p 2223:2222 \
     -v ${PWD}/ssh_host_ed25519_key:/etc/ssh/ssh_host_ed25519_key \
@@ -99,6 +100,7 @@ The purpose of this lab is to show how configuration can be injected into the co
     -v ${PWD}/client_rsa_key.pub:/home/sftp/.ssh/authorized_keys \
     --mount source=sftp-data,target=/data \
     sftp
+    ```
 
 1. Log in to the sftp server and upload a file
 
