@@ -31,7 +31,7 @@
     The ubuntu image contains does not technically run ubuntu linux, it contains the command line tools you'd expect to find in a ubuntu release.
 
     ```sh
-    docker run -it --rm ubuntu bash
+    sudo docker run -it --rm ubuntu bash
     ```
 
     output:
