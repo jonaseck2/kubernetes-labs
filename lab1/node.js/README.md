@@ -8,9 +8,10 @@ The purpose of this lab is to show how caching works when building images. and g
 
 ## Instructions
 
-1. go to the root of this lab
+1. go to the root of this lab if you haven't already done so
 
     ```sh
+    cd lab1
     cd node.js
     ```
 
