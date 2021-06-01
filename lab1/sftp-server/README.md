@@ -16,8 +16,8 @@ The purpose of this lab is to show how configuration can be injected into the co
 
 1. Build the container
 
-    The `-t` argument tags the image so we can refer to it in the run command in the next step
-    The `.` argument means that the Dockerfile is situated here
+    - The `-t` argument tags the image so we can refer to it in the run command in the next step
+    - The `.` argument means that the Dockerfile is situated here
 
     ```sh
     sudo docker build -t sftp .
