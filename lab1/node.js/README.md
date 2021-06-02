@@ -103,7 +103,7 @@ The purpose of this lab is to show how caching works when building images. and g
 
     Kill the container using the id or name shown
 
-    sh```
+    ```sh
     sudo docker kill nice_wright
     ```
 
