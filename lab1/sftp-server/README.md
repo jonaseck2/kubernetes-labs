@@ -87,7 +87,7 @@ The purpose of this lab is to show how configuration can be injected into the co
     Since the container is stateless, everything stored under /data is lost on start. Create a persistent volume to retain the data
 
     ```sh
-    sudo docker create sftp-data
+    sudo docker volume create sftp-data
     ```
 
 1. Start the container. Port 2222 is used by the other server so let's change the mapping:
