@@ -1,0 +1,67 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: sftp-server
+spec:
+  selector:
+    matchLabels:
+      app: sftp-server
+  serviceName: sftp-server
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: sftp-server
+    spec:
+      containers:
+      - name: sftp-server
+        image: sftp
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 2222
+          name: sftp
+        volumeMounts:
+        - name: data
+          mountPath: /data
+        - name: ssh-host-ed25519-key
+          mountPath: /etc/ssh/ssh_host_ed25519_key
+          subPath: ssh_host_ed25519_key
+        - name: ssh-host-rsa-key
+          mountPath: /etc/ssh/ssh_host_rsa_key
+          subPath: ssh_host_rsa_key
+        - name: authorized-keys
+          mountPath: /home/sftp/.ssh/authorized_keys
+          subPath: authorized_keys
+      volumes:
+      - name: ssh-host-ed25519-key
+        secret:
+          secretName: sftp-server
+          items:
+          - key: ssh_host_ed25519_key
+            path: ssh_host_ed25519_key
+            mode: 0600
+      - name: ssh-host-rsa-key
+        secret:
+          secretName: sftp-server
+          items:
+          - key: ssh_host_rsa_key
+            path: ssh_host_rsa_key
+            mode: 0600
+      - name: authorized-keys
+        secret:
+          secretName: sftp-server
+          items:
+          - key: authorized_keys
+            path: authorized_keys
+            mode: 0644
+      - name: data
+        hostPath:
+          path: /data
+#  volumeClaimTemplates:
+#  - metadata:
+#      name: data
+#    spec:
+#      accessModes: [ "ReadWriteOnce" ]
+#      resources:
+#        requests:
+#          storage: 1Gi

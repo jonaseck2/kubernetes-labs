@@ -86,27 +86,6 @@ The purpose of this lab is to show how to work with kubernetes resources as yaml
     Example app listening at http://localhost:3000
     ```
 
-1. Kill all the pods
-
-    Remember, pods are cattle
-
-    ```sh
-    kubectl delete pods --all
-    ```
-
-1. Check that the pods have been rescheduled
-
-    ```sh
-    kubectl get pods
-    ```
-
-    ```output
-    NAME                                 READY   STATUS    RESTARTS   AGE
-    nodejs-58bc746fdd-nwrh9   1/1     Running   0          16s
-    nodejs-58bc746fdd-sjwg6   1/1     Running   0          16s
-    nodejs-58bc746fdd-xzd85   1/1     Running   0          16s
-    ```
-
 1. Scale the number of pods
 
     ```sh
@@ -179,7 +158,7 @@ The purpose of this lab is to show how to work with kubernetes resources as yaml
 
 ### Test the solution
 
-1. Curl or brows to your external IP
+1. Curl or browse to your external IP
 
     ```sh
     curl http://104.40.228.99/nodejs
