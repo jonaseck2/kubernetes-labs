@@ -27,7 +27,7 @@ The purpose of this lab is to show how configuration can be injected into the co
 
     ```sh
     sudo docker run -d \
-    -p 3000:3000 \
+    -p 80:3000 \
     -e NAME="Despicable Me" \
     python-helloworld
     ```
@@ -35,10 +35,16 @@ The purpose of this lab is to show how configuration can be injected into the co
 1. curl to the web server to see the output:
 
     ```sh
-    curl localhost:3000
+    curl localhost
     ```
 
     output:
+
+    ```output
+    Hello Despicable Me
+    ```
+
+1. Browse to the external IP address of your vm
 
     ```output
     Hello Despicable Me
