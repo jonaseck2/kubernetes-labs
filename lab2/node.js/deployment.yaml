@@ -17,5 +17,6 @@ spec:
       containers:
       - name: nodejs
         image: nodejs-helloworld
+        imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 3000

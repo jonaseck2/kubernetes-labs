@@ -72,7 +72,17 @@ from <https://linuxconfig.org/how-to-install-kubernetes-on-ubuntu-20-04-focal-fo
     docker1   Ready    control-plane,master   2m7s   v1.21.1
     ```
 
+## Install a pod network
+
+1. 
+
+    ```sh
+    kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
+    kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/k8s-manifests/kube-flannel-rbac.yml
+    ```
+
 ## Install an Ingress
+
 
 1. 
 
@@ -86,7 +96,11 @@ from <https://linuxconfig.org/how-to-install-kubernetes-on-ubuntu-20-04-focal-fo
     ```
 
     ```sh
-    kubectl patch 
+    kubectl patch -n kube-system deployment.apps/traefik-ingress-controller --patch "
+    spec:
+      template:
+        spec:
+          hostNetwork: true"
 
 
 
