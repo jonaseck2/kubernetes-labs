@@ -105,7 +105,7 @@ The purpose of this lab is to show how configuration can be injected into the co
 1. Log in to the sftp server and upload a file
 
     ```sh
-    sftp -oIdentityFile=client_rsa_key -P2222 sftp@localhost
+    sftp -oIdentityFile=client_rsa_key -P 2223 sftp@localhost
     sftp> cd upload
     sftp> ls
     sftp> put README.md
