@@ -80,7 +80,7 @@ from <https://linuxconfig.org/how-to-install-kubernetes-on-ubuntu-20-04-focal-fo
 
     ```output
     NAME      STATUS   ROLES                  AGE    VERSION
-    docker1   Ready    control-plane,master   2m7s   v1.21.1
+    docker1   NotReady control-plane,master   2m7s   v1.21.1
     ```
 
 1. Untaint the master node so we can schedule pods to the node
@@ -102,6 +102,17 @@ from <https://linuxconfig.org/how-to-install-kubernetes-on-ubuntu-20-04-focal-fo
     ```sh
     kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
     kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/k8s-manifests/kube-flannel-rbac.yml
+    ```
+
+1. Test the credentials using kubectl
+
+    ```sh
+    kubectl get nodes
+    ```
+
+    ```output
+    NAME      STATUS   ROLES                  AGE    VERSION
+    docker1   Ready    control-plane,master   2m7s   v1.21.1
     ```
 
 ## Install an Ingress Controller
