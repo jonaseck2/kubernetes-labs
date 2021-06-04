@@ -1,4 +1,4 @@
-# LAB1: Build and run a single node kubernetes cluster
+# LAB2: Build and run a single node kubernetes cluster
 
 from <https://linuxconfig.org/how-to-install-kubernetes-on-ubuntu-20-04-focal-fossa-linux>
 
