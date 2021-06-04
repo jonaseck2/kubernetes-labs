@@ -59,6 +59,11 @@ The purpose of this lab is to show how configuration can be injected into the co
     kubectl logs sftp-server-0
     ```
 
+    ```output
+    Server listening on 0.0.0.0 port 2222.
+    Server listening on :: port 2222.
+    ```
+
 ### inspect the yaml
 
 1. Secrets can be used as volumes and mounted as files
