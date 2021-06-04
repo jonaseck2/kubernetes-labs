@@ -149,7 +149,7 @@ The purpose of this lab is to show how to work with kubernetes resources as yaml
     An Ingress sends traffic based on HTTP host and path to the  specified service
      
     ```sh
-    kubectl applky -f ingress.yaml
+    kubectl apply -f ingress.yaml
     ```
 
     ```output
