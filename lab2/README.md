@@ -27,6 +27,17 @@ from <https://linuxconfig.org/how-to-install-kubernetes-on-ubuntu-20-04-focal-fo
     sudo apt update -q
     sudo apt install kubeadm kubelet kubectl kubernetes-cni
     ```
+    
+    ```output
+    Hit:1 http://azure.archive.ubuntu.com/ubuntu focal InRelease
+    Hit:2 http://azure.archive.ubuntu.com/ubuntu focal-updates InRelease
+    Hit:3 http://azure.archive.ubuntu.com/ubuntu focal-backports InRelease
+    Hit:4 https://packages.microsoft.com/ubuntu/20.04/prod focal InRelease
+    Hit:6 http://security.ubuntu.com/ubuntu focal-security InRelease
+    Hit:5 https://packages.cloud.google.com/apt kubernetes-xenial InRelease
+    ```
+    
+    The last row should contain `kubernetes-xenial`
 
 1. disable swap:
     
